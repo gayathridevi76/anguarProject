@@ -1,0 +1,26 @@
+<form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+    First Name <span style="color:crimson">*</span><br>
+     <input type="text" name="fname" ngModel required #fname1="ngModel"/> 
+    <div *ngIf="!fname1.valid">First Name is Mandatory</div><br>
+    Last Name
+    <input type="text" name="lname" ngModel><br>
+    Email
+    <input type ="text" name="email" email ngModel #email1="ngModel"/> 
+    <span style="color:crimson">
+    <div *ngIf="!email1.valid">Email is not proper</div></span><br>
+    Mobile Number
+    <input type="text" name="mob" ngModel><br>
+    Gender
+    <select name="gender" ngModel>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select><br>
+    <button type="submit" >Add</button>
+    <div>
+        <p>FirstName<strong>{{formData.FirstName}}</strong></p>
+        <p>LastName<strong>{{formData.LastName}}</strong></p>
+        <p>Email<strong>{{formData.Email}}</strong></p>
+        <p>Mobile<strong>{{formData.Mobile}}</strong></p>
+        <p>Gender<strong>{{formData.Gender}}</strong></p>
+    </div>
+</form>

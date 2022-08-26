@@ -1,0 +1,28 @@
+<form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+    First Name <span style="color:crimson">*</span><br>
+     <input type="text" formControlName="fname" /> 
+     <div style ="color: brown;" *ngIf ="!reactiveForm.get('fname')!.valid">Enter the FirstName.Maxlength 10 and Min Length 5</div>
+   <br>
+    Last Name
+    <input type="text" formControlName="lname" l><br>
+    Email
+    <input type ="text" formControlName="email" />
+    <div style ="color: brown;" *ngIf ="reactiveForm.get('email')!.invalid && (reactiveForm.get('email')!.dirty || reactiveForm.get('email')!.touched)" >Please enter proper Email</div>
+   <br>
+    Mobile Number
+    <input type="text" formControlName="mob" /><br>
+    Gender
+    <select formControlName="gender" >
+        <option *ngFor="let item of gender" value={{item}}>{{item}}</option>
+     </select><br>
+    <button type="submit" >Add</button>
+    <button  (click) ="Reset()">Reset</button>
+    <div>
+        <p>FirstName<strong>{{formData.FirstName}}</strong></p>
+        <p>LastName<strong>{{formData.LastName}}</strong></p>
+        <p>Email<strong>{{formData.Email}}</strong></p>
+        <p>Mobile<strong>{{formData.Mobile}}</strong></p>
+        <p>Gender<strong>{{formData.Gender}}</strong></p>
+    </div>
+ </form>
+

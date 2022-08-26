@@ -1,0 +1,22 @@
+<div>
+    <!--<select (change)="selectItem($event)">
+        <option value="default">Select Option</option>
+        <option value="Laptop">Laptop</option>
+        <option value="Mobile">Mobile</option>
+        <option value="TV">TV</option>
+        <option value="WashingMachine">WashingMachine</option>
+        <option value="Car">Car</option>
+    </select>-->
+    <select (change)="selectItem($event)">
+        <option *ngFor="let item of productList" value={{item}}>{{item}}</option>
+        </select>
+</div>
+<div [ngSwitch]="selectedItem" [ngClass] = "[myCss,myCss1]">
+    <h2 *ngSwitchDefault>Please Select</h2>
+    <h2 *ngSwitchCase ="'Laptop'">Laptop</h2>
+    <h2 *ngSwitchCase ="'Mobile'">Mobile</h2>
+    <h2 *ngSwitchCase ="'TV'">TV</h2>
+    <h2 *ngSwitchCase ="'WashingMachine'">WashingMachine</h2>
+    <h2 *ngSwitchCase ="'Car'">Car</h2>
+
+</div>

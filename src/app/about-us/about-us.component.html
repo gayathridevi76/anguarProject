@@ -1,0 +1,19 @@
+<!--<h1>I am about us</h1>
+<h1> I am {{myname}}</h1> -- interpolation (Model to view)
+<img [src] = myimagepath height=200> 
+<button (click)="showImage()">Show Me</button>
+<button (click)="hideImage()">Hide Me</button>
+<img [src] =myimagepath *ngIf= "isShow" height=200> --Property binding (model to view)
+<input type="text" [(ngModel)] = "myname"> -->
+
+
+<!--<div>
+    Enter Your Name: <input type="text" name="text" #text/> <br />
+    <button (click)="greet(text.value)">Greet Me!</button>
+</div> -->
+<div>
+    <select>
+        <option type="" name="colorname" class="class1" (click)="OnColorChange($event)">red</option>
+        <option type="" name="colorname" class="class2" (select)="OnColorChange($event)">blue</option>
+    </select>
+</div>

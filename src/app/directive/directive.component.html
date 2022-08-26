@@ -1,0 +1,63 @@
+<div *ngIf="isLoggedIn then thenblock else elseblock ">I am from first div</div>
+<div *ngIf="isLoggedIn ; else elseblock ">I am from first div</div>
+<ng-template #thenblock>
+    i am from thenblock
+</ng-template>
+<ng-template #elseblock>
+    i am from elseblock
+</ng-template>
+<br><br>    
+My Name
+<input type ="text" #myname><br>
+My Email
+<input type ="text" #myemail><br>
+<button (click)="Submit(myname.value,myemail.value)" >Submit</button>
+<br><br>
+<div *ngIf="isSub">
+My name is {{myFullName}}<br>
+My email is {{myFullEmail}}
+</div>
+<h1>Employee List</h1>
+<table border="2" style="color:blue">
+<div>
+<tr>
+    <td>#</td>
+    <td>Id</td>
+    <td>FirstName</td>
+    <td>LastName</td>
+    <td>Branch</td>
+    <td>DOB</td>
+    <td>gender</td>
+    <td>salary</td>
+</tr>
+</div>
+<div *ngFor="let emp of students;index as i">
+    <ng-container *ngIf="emp.Salary>30000;">
+<tr>
+    <td>{{i+1}}</td>
+    <td>{{emp.Id}}</td>
+    <td>{{emp.FirstName | uppercase | custom:emp.gender}}</td>
+    <td>{{emp.LastName | lowercase}}</td>
+    <td>{{emp.Branch}}</td>
+    <td>{{emp.DOB | date:'yyyy-mm-dd'}}</td>
+    <td>{{emp.gender}}</td>
+    <td>{{emp.Salary | currency:'USD'}}</td>
+</tr>
+    </ng-container>
+<!--<ng-container *ngIf="emp.Salary>30000;else empblock">
+</ng-container>
+<ng-template #empblock>
+    <tr>
+        <td>{{i+1}}</td>
+        <td>{{emp.Id}}</td>
+        <td>{{emp.FirstName}}</td>
+        <td>{{emp.LastName}}</td>
+        <td>{{emp.Branch}}</td>
+        <td>{{emp.DOB}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.Salary}}</td>
+    </tr>
+</ng-template>-->
+
+</div>
+</table>
