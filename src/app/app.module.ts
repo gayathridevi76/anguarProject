@@ -17,6 +17,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { TestComponent } from './test/test.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { UserListComponent } from './user-list/user-list.component';
     PageNotFoundComponent,
     TemplateDrivenComponent,
     ReactiveComponent,
-    UserListComponent
+    UserListComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
